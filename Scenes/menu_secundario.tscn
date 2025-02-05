@@ -1,0 +1,108 @@
+[gd_scene load_steps=16 format=3 uid="uid://1v3o3l7tsmnf"]
+
+[ext_resource type="Script" path="res://Scripts/menu_secundario.gd" id="1_hll3e"]
+[ext_resource type="Texture2D" uid="uid://bjfwuoedv0oby" path="res://Assets/Sprites/Background/Animação BG/BG (1).png" id="1_hpdc1"]
+[ext_resource type="Texture2D" uid="uid://64kfwjyotl0i" path="res://Assets/Sprites/Background/Animação BG/BG (2).png" id="2_grr5x"]
+[ext_resource type="Texture2D" uid="uid://bf583nf5w6y6" path="res://Assets/Sprites/Background/Animação BG/BG (3).png" id="3_vsex8"]
+[ext_resource type="Texture2D" uid="uid://bris5624qhp3f" path="res://Assets/Sprites/Background/Animação BG/BG (4).png" id="4_s8vwa"]
+[ext_resource type="Texture2D" uid="uid://d3qnx8urbavo2" path="res://Assets/Sprites/Background/Animação BG/BG (5).png" id="5_uhow4"]
+[ext_resource type="Texture2D" uid="uid://b777alt0wn3nf" path="res://Assets/Sprites/Background/Animação BG/BG (6).png" id="6_wuxj0"]
+[ext_resource type="Texture2D" uid="uid://bcp0t3ae3fhws" path="res://Assets/Sprites/Background/Animação BG/BG (7).png" id="7_nyxjn"]
+[ext_resource type="FontFile" uid="uid://cvplnggk6ulk7" path="res://Assets/Fonts/IllusionBook-Regular v1.0.2/IllusionBook-Regular.ttf" id="8_6pd3r"]
+[ext_resource type="Texture2D" uid="uid://bnasgewaqkot6" path="res://Assets/Sprites/Buttons/Start_and_Exit_Button.png" id="9_py01p"]
+[ext_resource type="Texture2D" uid="uid://u00uomrtbeut" path="res://Assets/Sprites/Buttons/Start_and_Exit_Button_Pressed.png" id="10_p1dxt"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5ooku"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_hpdc1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_grr5x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_vsex8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_s8vwa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_uhow4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_wuxj0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_nyxjn")
+}],
+"loop": true,
+"name": &"menu",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ra6rj"]
+texture = ExtResource("9_py01p")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c10hs"]
+texture = ExtResource("9_py01p")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ffosl"]
+texture = ExtResource("10_p1dxt")
+
+[node name="menu_secundario" type="Node"]
+script = ExtResource("1_hll3e")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(512, 289)
+texture = ExtResource("1_hpdc1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Sprite2D"]
+sprite_frames = SubResource("SpriteFrames_5ooku")
+animation = &"menu"
+
+[node name="Start" type="Button" parent="Sprite2D/AnimatedSprite2D"]
+offset_left = -99.0
+offset_top = 5.0
+offset_right = 157.0
+offset_bottom = 76.0
+focus_mode = 0
+theme_override_colors/font_color = Color(0.909804, 0, 0.45098, 1)
+theme_override_colors/font_pressed_color = Color(0.956863, 0, 0.529412, 1)
+theme_override_colors/font_hover_color = Color(1, 0.117647, 0.541176, 1)
+theme_override_colors/font_outline_color = Color(0, 0.784314, 0.92549, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("8_6pd3r")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxTexture_ra6rj")
+theme_override_styles/hover = SubResource("StyleBoxTexture_c10hs")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ffosl")
+text = "START
+"
+icon = ExtResource("9_py01p")
+flat = true
+icon_alignment = 1
+
+[node name="Exit" type="Button" parent="Sprite2D/AnimatedSprite2D"]
+offset_left = -99.0
+offset_top = 70.0
+offset_right = 157.0
+offset_bottom = 141.0
+theme_override_colors/font_color = Color(0.909804, 0, 0.45098, 1)
+theme_override_colors/font_pressed_color = Color(0.956863, 0, 0.529412, 1)
+theme_override_colors/font_hover_color = Color(1, 0.117647, 0.541176, 1)
+theme_override_colors/font_outline_color = Color(0, 0.784314, 0.92549, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("8_6pd3r")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxTexture_ra6rj")
+theme_override_styles/hover = SubResource("StyleBoxTexture_c10hs")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ffosl")
+text = "EXIT
+"
+icon = ExtResource("9_py01p")
+flat = true
+icon_alignment = 1
+
+[connection signal="pressed" from="Sprite2D/AnimatedSprite2D/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Sprite2D/AnimatedSprite2D/Exit" to="." method="_on_exit_pressed"]

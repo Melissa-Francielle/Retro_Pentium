@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://5om6k3kkmiml"]
+
+[ext_resource type="Script" path="res://Scripts/NovelsScripts/character_scene.gd" id="1_ofyoq"]
+[ext_resource type="SpriteFrames" uid="uid://dpsymt1v7sno5" path="res://NovelsScenes/characters/Renkai.tres" id="2_eowir"]
+
+[node name="CharacterScene" type="Node2D"]
+position = Vector2(-273, -189)
+script = ExtResource("1_ofyoq")
+
+[node name="Character" type="AnimatedSprite2D" parent="."]
+position = Vector2(295, 195)
+scale = Vector2(1.7, 1.7)
+sprite_frames = ExtResource("2_eowir")
+animation = &"talking"

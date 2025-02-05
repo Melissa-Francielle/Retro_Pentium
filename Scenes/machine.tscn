@@ -1,0 +1,466 @@
+[gd_scene load_steps=13 format=3 uid="uid://dng7s13rle7c6"]
+
+[ext_resource type="Script" path="res://Scripts/Machine.gd" id="1_7h0x4"]
+[ext_resource type="Texture2D" uid="uid://b7r0sj64t61f0" path="res://Assets/Sprites/Cutscenes/Machine/MC_0000.png" id="2_frrse"]
+[ext_resource type="Texture2D" uid="uid://dywidnk6nfdj6" path="res://Assets/Sprites/Cutscenes/Machine/MC_0002.png" id="3_x2xgd"]
+[ext_resource type="Texture2D" uid="uid://blyk8j33qm2wq" path="res://Assets/Sprites/Cutscenes/Machine/MC_0003.png" id="4_ln3qq"]
+[ext_resource type="Texture2D" uid="uid://bdwo6muntqpcl" path="res://Assets/Sprites/Cutscenes/Machine/MC_0004.png" id="5_7pq8v"]
+[ext_resource type="Texture2D" uid="uid://d2cig4gcn77k4" path="res://Assets/Sprites/Cutscenes/Machine/MC_0005.png" id="6_b3s2g"]
+[ext_resource type="Texture2D" uid="uid://b1tjv0eve0tft" path="res://Assets/Sprites/Cutscenes/Machine/MC_0007.png" id="7_113h2"]
+[ext_resource type="Texture2D" uid="uid://bf4gkqd80sjhm" path="res://Assets/Sprites/Cutscenes/Machine/MC_0008.png" id="8_jbpqw"]
+[ext_resource type="FontFile" uid="uid://c3cg4mvjm02dy" path="res://Assets/Fonts/Pixel Font/Lief.ttf" id="9_c3utl"]
+[ext_resource type="PackedScene" uid="uid://dmwlomsk7dtbh" path="res://Scenes/health.tscn" id="10_vqt4r"]
+[ext_resource type="Texture2D" uid="uid://cty0d5iooav0j" path="res://Assets/Sprites/Cutscenes/MachineLife/Timeline 1_0009.png" id="11_6gni7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wbdvr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_frrse")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_x2xgd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ln3qq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_7pq8v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_b3s2g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_113h2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_jbpqw")
+}],
+"loop": true,
+"name": &"machine",
+"speed": 5.0
+}]
+
+[node name="Machine" type="Node2D"]
+script = ExtResource("1_7h0x4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.757, 0.757)
+sprite_frames = SubResource("SpriteFrames_wbdvr")
+animation = &"machine"
+
+[node name="Tarefa_ID" type="Label" parent="."]
+offset_left = -165.0
+offset_top = -73.0
+offset_right = -93.0
+offset_bottom = -51.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("9_c3utl")
+theme_override_font_sizes/font_size = 16
+text = "Tarefa"
+horizontal_alignment = 1
+
+[node name="ID1" type="Label" parent="Tarefa_ID"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 57.0
+offset_right = 40.0
+offset_bottom = 81.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("9_c3utl")
+theme_override_font_sizes/font_size = 20
+text = "T1"
+horizontal_alignment = 1
+
+[node name="ID2" type="Label" parent="Tarefa_ID"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 94.0
+offset_right = 42.0
+offset_bottom = 118.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("9_c3utl")
+theme_override_font_sizes/font_size = 20
+text = "T2
+"
+horizontal_alignment = 1
+
+[node name="ID3" type="Label" parent="Tarefa_ID"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 134.0
+offset_right = 42.0
+offset_bottom = 158.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("9_c3utl")
+theme_override_font_sizes/font_size = 20
+text = "T3
+"
+horizontal_alignment = 1
+
+[node name="ID4" type="Label" parent="Tarefa_ID"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 175.0
+offset_right = 44.0
+offset_bottom = 223.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("9_c3utl")
+theme_override_font_sizes/font_size = 20
+text = "T4
+
+"
+horizontal_alignment = 1
+
+[node name="Tempo_chegada" type="Label" parent="."]
+offset_left = -92.0
+offset_top = -74.0
+offset_right = -28.0
+offset_bottom = -32.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("9_c3utl")
+theme_override_font_sizes/font_size = 17
+text = "Tempo
+chegada
+"
+horizontal_alignment = 1
+
+[node name="ID1" type="Label" parent="Tempo_chegada"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 57.0
+offset_right = 62.0
+offset_bottom = 99.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("9_c3utl")
+theme_override_font_sizes/font_size = 20
+text = "0
+"
+horizontal_alignment = 1
+
+[node name="ID2" type="Label" parent="Tempo_chegada"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 94.0
+offset_right = 62.0
+offset_bottom = 136.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("9_c3utl")
+theme_override_font_sizes/font_size = 20
+text = "0
+"
+horizontal_alignment = 1
+
+[node name="ID3" type="Label" parent="Tempo_chegada"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 136.0
+offset_right = 62.0
+offset_bottom = 178.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("9_c3utl")
+theme_override_font_sizes/font_size = 20
+text = "0
+"
+horizontal_alignment = 1
+
+[node name="ID4" type="Label" parent="Tempo_chegada"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 175.0
+offset_right = 62.0
+offset_bottom = 217.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("9_c3utl")
+theme_override_font_sizes/font_size = 20
+text = "0
+"
+horizontal_alignment = 1
+
+[node name="Tempo_total" type="Label" parent="."]
+offset_left = -30.0
+offset_top = -74.0
+offset_right = 55.0
+offset_bottom = -14.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("9_c3utl")
+theme_override_font_sizes/font_size = 16
+text = "Tempo
+ total
+
+"
+horizontal_alignment = 1
+
+[node name="ID1" type="Label" parent="Tempo_total"]
+layout_mode = 0
+offset_top = 57.0
+offset_right = 85.0
+offset_bottom = 117.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("9_c3utl")
+theme_override_font_sizes/font_size = 20
+text = "0
+
+"
+horizontal_alignment = 1
+
+[node name="ID2" type="Label" parent="Tempo_total"]
+layout_mode = 0
+offset_top = 94.0
+offset_right = 85.0
+offset_bottom = 154.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("9_c3utl")
+theme_override_font_sizes/font_size = 20
+text = "0
+
+"
+horizontal_alignment = 1
+
+[node name="ID3" type="Label" parent="Tempo_total"]
+layout_mode = 0
+offset_top = 137.0
+offset_right = 85.0
+offset_bottom = 197.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("9_c3utl")
+theme_override_font_sizes/font_size = 20
+text = "0
+
+"
+horizontal_alignment = 1
+
+[node name="ID4" type="Label" parent="Tempo_total"]
+layout_mode = 0
+offset_top = 175.0
+offset_right = 85.0
+offset_bottom = 235.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("9_c3utl")
+theme_override_font_sizes/font_size = 20
+text = "0
+
+"
+horizontal_alignment = 1
+
+[node name="Tempo_final" type="Label" parent="."]
+offset_left = 38.0
+offset_top = -74.0
+offset_right = 125.0
+offset_bottom = 31.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("9_c3utl")
+theme_override_font_sizes/font_size = 17
+text = "Tempo
+ final
+
+
+
+"
+horizontal_alignment = 1
+
+[node name="ID1" type="Label" parent="Tempo_final"]
+layout_mode = 0
+offset_top = 57.0
+offset_right = 87.0
+offset_bottom = 177.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("9_c3utl")
+theme_override_font_sizes/font_size = 20
+text = "0
+
+
+
+
+"
+horizontal_alignment = 1
+
+[node name="ID2" type="Label" parent="Tempo_final"]
+layout_mode = 0
+offset_top = 94.0
+offset_right = 87.0
+offset_bottom = 214.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("9_c3utl")
+theme_override_font_sizes/font_size = 20
+text = "0
+
+
+
+
+"
+horizontal_alignment = 1
+
+[node name="ID3" type="Label" parent="Tempo_final"]
+layout_mode = 0
+offset_top = 137.0
+offset_right = 87.0
+offset_bottom = 257.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("9_c3utl")
+theme_override_font_sizes/font_size = 20
+text = "0
+
+
+
+
+"
+horizontal_alignment = 1
+
+[node name="ID4" type="Label" parent="Tempo_final"]
+layout_mode = 0
+offset_top = 175.0
+offset_right = 87.0
+offset_bottom = 295.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("9_c3utl")
+theme_override_font_sizes/font_size = 20
+text = "0
+
+
+
+
+"
+horizontal_alignment = 1
+
+[node name="Quantum" type="Label" parent="."]
+offset_left = 125.0
+offset_top = -74.0
+offset_right = 196.0
+offset_bottom = -8.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("9_c3utl")
+theme_override_font_sizes/font_size = 17
+text = "Quantum
+
+
+"
+horizontal_alignment = 1
+
+[node name="ID1" type="Label" parent="Quantum"]
+layout_mode = 0
+offset_top = 57.0
+offset_right = 71.0
+offset_bottom = 153.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("9_c3utl")
+theme_override_font_sizes/font_size = 20
+text = "0
+
+
+
+"
+horizontal_alignment = 1
+
+[node name="ID2" type="Label" parent="Quantum"]
+layout_mode = 0
+offset_top = 94.0
+offset_right = 71.0
+offset_bottom = 190.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("9_c3utl")
+theme_override_font_sizes/font_size = 20
+text = "0
+
+
+
+"
+horizontal_alignment = 1
+
+[node name="ID3" type="Label" parent="Quantum"]
+layout_mode = 0
+offset_top = 137.0
+offset_right = 71.0
+offset_bottom = 233.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("9_c3utl")
+theme_override_font_sizes/font_size = 20
+text = "0
+
+
+
+"
+horizontal_alignment = 1
+
+[node name="ID4" type="Label" parent="Quantum"]
+layout_mode = 0
+offset_top = 175.0
+offset_right = 71.0
+offset_bottom = 271.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("9_c3utl")
+theme_override_font_sizes/font_size = 20
+text = "0
+
+
+
+"
+horizontal_alignment = 1
+
+[node name="Tw" type="Label" parent="."]
+offset_left = -105.0
+offset_top = -100.0
+offset_right = -15.0
+offset_bottom = -20.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("9_c3utl")
+theme_override_font_sizes/font_size = 16
+text = "T_espera:
+
+
+
+"
+horizontal_alignment = 1
+
+[node name="Tt" type="Label" parent="."]
+offset_left = 32.0
+offset_top = -100.0
+offset_right = 160.0
+offset_bottom = -13.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("9_c3utl")
+theme_override_font_sizes/font_size = 16
+text = "T_execucao:
+
+
+
+"
+horizontal_alignment = 1
+
+[node name="Health" parent="." instance=ExtResource("10_vqt4r")]
+offset_left = 248.0
+offset_top = -33.0
+offset_right = 294.0
+offset_bottom = 144.0
+
+[node name="container" type="Sprite2D" parent="."]
+position = Vector2(270.5, 56.5)
+scale = Vector2(0.759616, 0.754658)
+texture = ExtResource("11_6gni7")

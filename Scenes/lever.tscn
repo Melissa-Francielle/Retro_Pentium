@@ -1,0 +1,170 @@
+[gd_scene load_steps=11 format=3 uid="uid://dsdlas60gdeap"]
+
+[ext_resource type="Script" path="res://Scripts/Lever.gd" id="1_hxcej"]
+[ext_resource type="Texture2D" uid="uid://y0heq5uh24ap" path="res://Assets/Sprites/Assets adicionais/sprite_0.png" id="1_uorqi"]
+[ext_resource type="Texture2D" uid="uid://d1iskgewx6cm2" path="res://Assets/Sprites/Assets adicionais/sprite_1.png" id="2_n7xlu"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j7vf1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_uorqi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_n7xlu")
+}],
+"loop": true,
+"name": &"lever_body",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_y3rkj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"lever_body"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_vaa11"]
+resource_name = "ativo"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"lever_body"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_n66ab"]
+resource_name = "desativado"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"lever_body"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_01m7u"]
+resource_name = "idle"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"lever_body"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nfye1"]
+_data = {
+"RESET": SubResource("Animation_y3rkj"),
+"ativo": SubResource("Animation_vaa11"),
+"desativado": SubResource("Animation_n66ab"),
+"idle": SubResource("Animation_01m7u")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2y4yq"]
+size = Vector2(69, 84)
+
+[node name="Lever" type="Area2D"]
+script = ExtResource("1_hxcej")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_j7vf1")
+animation = &"lever_body"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite2D"]
+libraries = {
+"": SubResource("AnimationLibrary_nfye1")
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -13)
+shape = SubResource("RectangleShape2D_2y4yq")
+
+[node name="press" type="Label" parent="."]
+visible = false
+offset_left = -4.0
+offset_top = -49.0
+offset_right = 122.0
+offset_bottom = -23.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 9
+text = "[E] Send process"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

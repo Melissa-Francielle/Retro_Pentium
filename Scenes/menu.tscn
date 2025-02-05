@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://cow6ikxqi47s6"]
+
+[ext_resource type="Texture2D" uid="uid://dhwcsi4nw1vdb" path="res://Assets/Sprites/Background/Windows_start.png" id="1_1twwe"]
+[ext_resource type="Script" path="res://Scripts/menu.gd" id="1_asj2m"]
+[ext_resource type="Texture2D" uid="uid://yqd4gkp4r4wh" path="res://Assets/Sprites/Buttons/Game_button.png" id="2_iqyqc"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vc7e7"]
+texture = ExtResource("2_iqyqc")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f0o7t"]
+texture = ExtResource("2_iqyqc")
+modulate_color = Color(0.403922, 0.403922, 0.403922, 1)
+
+[node name="Menu" type="Node"]
+script = ExtResource("1_asj2m")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(513, 287)
+texture = ExtResource("1_1twwe")
+
+[node name="Arquivo" type="Button" parent="."]
+anchors_preset = -1
+anchor_right = 0.042
+anchor_bottom = 0.075
+offset_left = 407.0
+offset_top = 245.0
+offset_right = 406.992
+offset_bottom = 244.8
+focus_mode = 0
+theme_override_styles/hover = SubResource("StyleBoxTexture_vc7e7")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_f0o7t")
+icon = ExtResource("2_iqyqc")
+flat = true

@@ -1,0 +1,88 @@
+[gd_scene load_steps=14 format=3 uid="uid://cpttsmi850msc"]
+
+[ext_resource type="Texture2D" uid="uid://baedr436afpla" path="res://Assets/Sprites/Cutscenes/Cutscene2/cut2 (1).png" id="1_b3e76"]
+[ext_resource type="Script" path="res://Scripts/NovelsScripts/novel_second_part.gd" id="1_e7kqu"]
+[ext_resource type="Texture2D" uid="uid://cyxg1xmaeyva0" path="res://Assets/Sprites/Cutscenes/Cutscene2/cut2 (2).png" id="2_y2lv7"]
+[ext_resource type="Texture2D" uid="uid://c4acxogf1ftmb" path="res://Assets/Sprites/Cutscenes/Cutscene2/cut2 (3).png" id="3_sau2x"]
+[ext_resource type="Texture2D" uid="uid://c2gnmmcmr7bri" path="res://Assets/Sprites/Cutscenes/Cutscene2/cut2 (4).png" id="4_4pw0v"]
+[ext_resource type="Texture2D" uid="uid://wtvm5a55cwnn" path="res://Assets/Sprites/Cutscenes/Cutscene2/cut2 (5).png" id="5_2sjkd"]
+[ext_resource type="Texture2D" uid="uid://dnhi4q5ojmbca" path="res://Assets/Sprites/Cutscenes/Cutscene2/cut2 (6).png" id="6_ydvpp"]
+[ext_resource type="Texture2D" uid="uid://dqdiamspp3ow6" path="res://Assets/Sprites/Cutscenes/Cutscene2/cut2 (7).png" id="7_cjpyk"]
+[ext_resource type="Texture2D" uid="uid://cpv3i26pgo6jd" path="res://Assets/Sprites/Cutscenes/Cutscene2/cut2 (8).png" id="8_cceqn"]
+[ext_resource type="Texture2D" uid="uid://de8braoxopb1m" path="res://Assets/Sprites/Cutscenes/Cutscene2/cut2 (9).png" id="9_ex3qh"]
+[ext_resource type="PackedScene" uid="uid://5om6k3kkmiml" path="res://NovelsScenes/character_scene.tscn" id="10_dsna1"]
+[ext_resource type="PackedScene" uid="uid://wqhypp5m1lm5" path="res://NovelsScenes/dialogue_ui.tscn" id="11_ebf5f"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wywrh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_b3e76")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_y2lv7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_sau2x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_4pw0v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2sjkd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ydvpp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_cjpyk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_cceqn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ex3qh")
+}],
+"loop": true,
+"name": &"Background",
+"speed": 7.0
+}]
+
+[node name="NovelSecondPart" type="Node2D"]
+position = Vector2(-4, 17)
+script = ExtResource("1_e7kqu")
+
+[node name="backgroundSecond" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="backgroundSecond"]
+position = Vector2(510, 289)
+sprite_frames = SubResource("SpriteFrames_wywrh")
+animation = &"Background"
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CharacterScene" parent="Control" instance=ExtResource("10_dsna1")]
+unique_name_in_owner = true
+position = Vector2(-135, 88)
+
+[node name="DialogueUI" parent="." instance=ExtResource("11_ebf5f")]
+unique_name_in_owner = true
+offset_left = 5.0
+offset_top = -16.0
+offset_right = 5.0
+offset_bottom = -16.0
+
+[node name="Fade" type="CanvasLayer" parent="."]
+
+[node name="FadeRect" type="ColorRect" parent="Fade"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)

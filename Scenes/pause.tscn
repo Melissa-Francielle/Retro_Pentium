@@ -1,0 +1,172 @@
+[gd_scene load_steps=21 format=3 uid="uid://xk4a7w55mrsb"]
+
+[ext_resource type="Texture2D" uid="uid://bn7nkxdkkydv0" path="res://Assets/Sprites/Buttons/Pause/ScreenPause2.png" id="1_1dtdn"]
+[ext_resource type="Shader" path="res://Shaders/blurShader.gdshader" id="1_15t2d"]
+[ext_resource type="Script" path="res://Scripts/pause.gd" id="1_et4g5"]
+[ext_resource type="Texture2D" uid="uid://dipsak5dgb6h6" path="res://Assets/Sprites/Buttons/Pause/ButtonPause1.png" id="2_giimu"]
+[ext_resource type="Texture2D" uid="uid://u3q5q70jjigm" path="res://Assets/Sprites/Buttons/Pause/ButtonPause2.png" id="3_f88dd"]
+[ext_resource type="Texture2D" uid="uid://ch3olom307cfp" path="res://Assets/Sprites/Buttons/Pause/ButtonPause3.png" id="4_khegm"]
+[ext_resource type="Texture2D" uid="uid://c5ssg0iwyxoa6" path="res://Assets/Sprites/Buttons/Pause/ButtonPause4.png" id="5_6fr57"]
+[ext_resource type="Texture2D" uid="uid://ihr3pqi7en3g" path="res://Assets/Sprites/Cutscenes/Pause/P_0000.png" id="6_l67cv"]
+[ext_resource type="Texture2D" uid="uid://dn3jgkf1s0wej" path="res://Assets/Sprites/Buttons/Pause/ButtonPause5.png" id="6_wga7a"]
+[ext_resource type="Texture2D" uid="uid://cily6x0e37ndx" path="res://Assets/Sprites/Cutscenes/Pause/P_0001.png" id="7_us0c4"]
+[ext_resource type="Texture2D" uid="uid://ca3uoanynb174" path="res://Assets/Sprites/Cutscenes/Pause/P_0002.png" id="8_yfvyg"]
+[ext_resource type="Texture2D" uid="uid://dlxdaex54t1wv" path="res://Assets/Sprites/Cutscenes/Pause/P_0003.png" id="9_d4mhv"]
+[ext_resource type="Texture2D" uid="uid://dow4uyjd4aliv" path="res://Assets/Sprites/Cutscenes/Pause/P_0004.png" id="10_ky84d"]
+[ext_resource type="Texture2D" uid="uid://dk7mrk6syywjv" path="res://Assets/Sprites/Cutscenes/Pause/P_0005.png" id="11_gbrhb"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_inr87"]
+shader = ExtResource("1_15t2d")
+shader_parameter/lod = 0.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_heyuv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_l67cv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_us0c4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_yfvyg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_d4mhv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_ky84d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_gbrhb")
+}],
+"loop": false,
+"name": &"heart",
+"speed": 8.0
+}]
+
+[sub_resource type="Animation" id="Animation_m5h8j"]
+resource_name = "pause_animation"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("overlay:material:shader_parameter/lod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.3, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_nmcqq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("overlay:material:shader_parameter/lod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_enp2x"]
+resource_name = "resume_game"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("overlay:material:shader_parameter/lod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_b3hah"]
+_data = {
+"RESET": SubResource("Animation_nmcqq"),
+"pause_animation": SubResource("Animation_m5h8j"),
+"resume_game": SubResource("Animation_enp2x")
+}
+
+[node name="Pause" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_et4g5")
+
+[node name="overlay" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_inr87")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+
+[node name="pause_menu" type="Sprite2D" parent="overlay"]
+position = Vector2(534, 260)
+texture = ExtResource("1_1dtdn")
+
+[node name="menu" type="Button" parent="overlay/pause_menu"]
+offset_left = -222.0
+offset_top = -114.0
+offset_right = -139.0
+offset_bottom = -39.0
+focus_mode = 0
+icon = ExtResource("2_giimu")
+flat = true
+
+[node name="continue" type="Button" parent="overlay/pause_menu"]
+offset_left = -104.0
+offset_top = -110.0
+offset_right = -21.0
+offset_bottom = -35.0
+focus_mode = 0
+icon = ExtResource("3_f88dd")
+flat = true
+
+[node name="volume" type="Button" parent="overlay/pause_menu"]
+offset_left = -214.0
+offset_top = -34.0
+offset_right = -140.0
+offset_bottom = 44.0
+focus_mode = 0
+icon = ExtResource("4_khegm")
+flat = true
+
+[node name="heart" type="Button" parent="overlay/pause_menu"]
+offset_left = -114.0
+offset_top = -34.0
+offset_right = -28.0
+offset_bottom = 42.0
+focus_mode = 0
+icon = ExtResource("5_6fr57")
+flat = true
+
+[node name="heatAnimation" type="AnimatedSprite2D" parent="overlay/pause_menu/heart"]
+visible = false
+position = Vector2(200, 32)
+sprite_frames = SubResource("SpriteFrames_heyuv")
+animation = &"heart"
+
+[node name="icons" type="Sprite2D" parent="overlay/pause_menu"]
+position = Vector2(-122, 84)
+texture = ExtResource("6_wga7a")
+
+[node name="animator" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_b3hah")
+}
+
+[connection signal="pressed" from="overlay/pause_menu/menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="overlay/pause_menu/continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="overlay/pause_menu/heart" to="." method="_on_heart_pressed"]

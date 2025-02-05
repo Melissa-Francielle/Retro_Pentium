@@ -1,0 +1,69 @@
+[gd_scene load_steps=8 format=3 uid="uid://cjsn8232x4qsu"]
+
+[ext_resource type="Script" path="res://Scripts/NovelsScripts/novel_fourth_part.gd" id="1_htocn"]
+[ext_resource type="Texture2D" uid="uid://chevo2bsyxfbp" path="res://Assets/Sprites/Cutscenes/CutscenesWarning4/Timeline 1_0000.png" id="1_nkh7l"]
+[ext_resource type="Texture2D" uid="uid://uvwuf7vy7gqn" path="res://Assets/Sprites/Cutscenes/CutscenesWarning4/Timeline 1_0002.png" id="2_1loqc"]
+[ext_resource type="Texture2D" uid="uid://bi0khf3b7bq08" path="res://Assets/Sprites/Cutscenes/CutscenesWarning4/Timeline 1_0004.png" id="3_jlrfd"]
+[ext_resource type="Texture2D" uid="uid://djgcol8v5pjaj" path="res://Assets/Sprites/Cutscenes/CutscenesWarning4/Timeline 1_0006.png" id="4_82nhk"]
+[ext_resource type="Texture2D" uid="uid://dw58cycyp1xx3" path="res://Assets/Sprites/Cutscenes/CutscenesWarning4/Timeline 1_0008.png" id="5_mneok"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gqqbw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_nkh7l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_1loqc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_jlrfd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_82nhk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_mneok")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_nkh7l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_1loqc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_jlrfd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_82nhk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_mneok")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_nkh7l")
+}],
+"loop": false,
+"name": &"KodoAnimation",
+"speed": 7.0
+}]
+
+[node name="NovelFourthPart" type="Node2D"]
+script = ExtResource("1_htocn")
+
+[node name="BackgroundFourth" type="CanvasLayer" parent="."]
+
+[node name="KodoAnimation" type="AnimatedSprite2D" parent="BackgroundFourth"]
+position = Vector2(513, 289)
+sprite_frames = SubResource("SpriteFrames_gqqbw")
+animation = &"KodoAnimation"
+
+[node name="Fade" type="CanvasLayer" parent="."]
+
+[node name="FadeRect" type="ColorRect" parent="Fade"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.00392157, 0.00392157, 0.00392157, 1)

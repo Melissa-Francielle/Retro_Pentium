@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://l0jaxd21jnh2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_va0jt"]
+albedo_color = Color(0.105882, 0.105882, 0.105882, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_gn061"]
+material = SubResource("StandardMaterial3D_va0jt")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dtyug"]
+render_priority = 3
+albedo_color = Color(0.996078, 0, 0.00784314, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_oumvd"]
+material = SubResource("StandardMaterial3D_dtyug")
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="base" type="MeshInstance2D" parent="."]
+position = Vector2(75, 131.375)
+scale = Vector2(150.5, 16.75)
+mesh = SubResource("BoxMesh_gn061")
+
+[node name="button" type="MeshInstance2D" parent="."]
+position = Vector2(73, 121.813)
+scale = Vector2(110, 7.1875)
+mesh = SubResource("CylinderMesh_oumvd")

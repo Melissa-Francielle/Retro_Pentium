@@ -1,0 +1,276 @@
+[gd_scene load_steps=5 format=3 uid="uid://cs6g04jk1u484"]
+
+[ext_resource type="Texture2D" uid="uid://7bk383nm8qmy" path="res://Assets/Sprites/Assets adicionais/TV.png" id="1_3wm3m"]
+[ext_resource type="Script" path="res://Scripts/monitor.gd" id="1_l3quu"]
+[ext_resource type="FontFile" uid="uid://c3cg4mvjm02dy" path="res://Assets/Fonts/Pixel Font/Lief.ttf" id="2_y531s"]
+[ext_resource type="FontFile" uid="uid://cvplnggk6ulk7" path="res://Assets/Fonts/IllusionBook-Regular v1.0.2/IllusionBook-Regular.ttf" id="3_lbxp0"]
+
+[node name="Monitor" type="Node2D"]
+script = ExtResource("1_l3quu")
+
+[node name="Tarefas_monitor" type="Sprite2D" parent="."]
+texture = ExtResource("1_3wm3m")
+
+[node name="Tarefa" type="Label" parent="."]
+offset_left = -113.0
+offset_top = -52.0
+offset_right = -56.0
+offset_bottom = -26.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_y531s")
+theme_override_font_sizes/font_size = 20
+text = "Tarefa"
+
+[node name="T1" type="Label" parent="."]
+offset_left = -7.0
+offset_top = -52.0
+offset_right = 50.0
+offset_bottom = -26.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_y531s")
+theme_override_font_sizes/font_size = 20
+text = "T1
+"
+
+[node name="I1" type="Label" parent="T1"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 26.0
+offset_right = 14.0
+offset_bottom = 52.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_lbxp0")
+theme_override_font_sizes/font_size = 20
+text = "0
+"
+horizontal_alignment = 1
+
+[node name="D1" type="Label" parent="T1"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 56.0
+offset_right = 14.0
+offset_bottom = 82.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_lbxp0")
+theme_override_font_sizes/font_size = 20
+text = "0
+"
+horizontal_alignment = 1
+
+[node name="P1" type="Label" parent="T1"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 90.0
+offset_right = 14.0
+offset_bottom = 116.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_lbxp0")
+theme_override_font_sizes/font_size = 20
+text = "0
+"
+horizontal_alignment = 1
+
+[node name="T2" type="Label" parent="."]
+offset_left = 26.0
+offset_top = -52.0
+offset_right = 83.0
+offset_bottom = -26.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_y531s")
+theme_override_font_sizes/font_size = 20
+text = "T2
+"
+
+[node name="I2" type="Label" parent="T2"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 26.0
+offset_right = 16.0
+offset_bottom = 52.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_lbxp0")
+theme_override_font_sizes/font_size = 20
+text = "0
+"
+horizontal_alignment = 1
+
+[node name="D2" type="Label" parent="T2"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 56.0
+offset_right = 16.0
+offset_bottom = 82.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_lbxp0")
+theme_override_font_sizes/font_size = 20
+text = "0
+"
+horizontal_alignment = 1
+
+[node name="P2" type="Label" parent="T2"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 90.0
+offset_right = 16.0
+offset_bottom = 116.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_lbxp0")
+theme_override_font_sizes/font_size = 20
+text = "0
+"
+horizontal_alignment = 1
+
+[node name="T3" type="Label" parent="."]
+offset_left = 62.0
+offset_top = -52.0
+offset_right = 119.0
+offset_bottom = -26.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_y531s")
+theme_override_font_sizes/font_size = 20
+text = "T3
+"
+
+[node name="I3" type="Label" parent="T3"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 26.0
+offset_right = 16.0
+offset_bottom = 52.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_lbxp0")
+theme_override_font_sizes/font_size = 20
+text = "0
+"
+horizontal_alignment = 1
+
+[node name="D3" type="Label" parent="T3"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 56.0
+offset_right = 16.0
+offset_bottom = 82.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_lbxp0")
+theme_override_font_sizes/font_size = 20
+text = "0
+"
+horizontal_alignment = 1
+
+[node name="P3" type="Label" parent="T3"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 90.0
+offset_right = 16.0
+offset_bottom = 116.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_lbxp0")
+theme_override_font_sizes/font_size = 20
+text = "0
+"
+horizontal_alignment = 1
+
+[node name="T4" type="Label" parent="."]
+offset_left = 96.0
+offset_top = -52.0
+offset_right = 153.0
+offset_bottom = -26.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_y531s")
+theme_override_font_sizes/font_size = 20
+text = "T4
+"
+
+[node name="I4" type="Label" parent="T4"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 26.0
+offset_right = 17.0
+offset_bottom = 52.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_lbxp0")
+theme_override_font_sizes/font_size = 20
+text = "0
+"
+horizontal_alignment = 1
+
+[node name="D4" type="Label" parent="T4"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 56.0
+offset_right = 17.0
+offset_bottom = 82.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_lbxp0")
+theme_override_font_sizes/font_size = 20
+text = "0
+"
+horizontal_alignment = 1
+
+[node name="P4" type="Label" parent="T4"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 90.0
+offset_right = 17.0
+offset_bottom = 116.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_lbxp0")
+theme_override_font_sizes/font_size = 20
+text = "0
+"
+horizontal_alignment = 1
+
+[node name="Ingresso" type="Label" parent="."]
+offset_left = -113.0
+offset_top = -24.0
+offset_right = -39.0
+offset_bottom = 2.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_y531s")
+theme_override_font_sizes/font_size = 20
+text = "Ingresso
+"
+
+[node name="Duração" type="Label" parent="."]
+offset_left = -113.0
+offset_top = -2.0
+offset_right = -39.0
+offset_bottom = 31.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_y531s")
+theme_override_font_sizes/font_size = 20
+text = "Duração
+"
+
+[node name="Prioridade" type="Label" parent="."]
+offset_left = -113.0
+offset_top = 40.0
+offset_right = -22.0
+offset_bottom = 88.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_y531s")
+theme_override_font_sizes/font_size = 20
+text = "Prioridade
+
+"

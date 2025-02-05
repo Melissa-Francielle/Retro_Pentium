@@ -1,0 +1,14 @@
+[gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://cb4qha2jxvvgg"]
+
+[ext_resource type="Texture2D" uid="uid://blujn88pgqbsm" path="res://Assets/Sprites/Cutscenes/Characters/kodo.png" id="1_7goov"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_7goov")
+}],
+"loop": true,
+"name": &"talking",
+"speed": 5.0
+}]
