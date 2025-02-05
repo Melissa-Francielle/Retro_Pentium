@@ -1,0 +1,17 @@
+[remap]
+
+importer="font_data_bmfont"
+type="FontFile"
+uid="uid://cnufxuxqgsbyx"
+path="res://.godot/imported/gudluk.fnt-d3071d92875acb9982ec6e93c5b469a2.fontdata"
+
+[deps]
+
+source_file="res://Assets/Fonts/gudluk-1.0.0/gudluk/gudluk.fnt"
+dest_files=["res://.godot/imported/gudluk.fnt-d3071d92875acb9982ec6e93c5b469a2.fontdata"]
+
+[params]
+
+fallbacks=[]
+compress=true
+scaling_mode=2
