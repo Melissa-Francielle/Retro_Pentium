@@ -3,7 +3,7 @@
 ## 📌 **Projeto Final de Sistemas Operacionais**  
 **Universidade Estadual do Norte do Paraná - Campus Luiz Meneghel**  
 **Curso:** Ciência da Computação - 3º Ano  
-
+**Prof.Dra: Maria Renata Gobbo
 ### 👨‍💻 **Alunos Envolvidos:**
 - **Armando Braga**  
 - **Gabriel Vilar**  
